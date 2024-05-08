@@ -4,6 +4,28 @@
 
 const convertToBase16 = element => {
   // Your code here
+
+  const hexValues = {
+    '0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9,
+    'a': 10, 'b': 11, 'c': 12, 'd': 13, 'e': 14, 'f': 15,
+    'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14, 'F': 15
+};
+
+let decimal = 0;
+
+// Start from the second character to skip the "0x" prefix
+for (let i = 2; i < element.length; i++) {
+    const digit = element[i];
+    const value = hexValues[digit];
+    decimal = decimal * 16 + value;
+}
+
+return decimal;
+
+//short hand
+//------------------------------------------
+// const decimalNumber = parseInt(element, 16);
+// return decimalNumber
 };
 
 /******************************************************************************/

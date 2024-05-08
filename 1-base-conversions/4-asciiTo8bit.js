@@ -8,6 +8,23 @@ const addZeros = require('../utils/addZeros');
 
 const asciiTo8bit = str => {
   // Your code here
+
+    // Initialize an empty string to store the binary result
+    let binaryString = '';
+    
+    // Iterate over each character in the input string
+    for (let i = 0; i < str.length; i++) {
+        // Get the ASCII code of the current character
+        const asciiCode = str.charCodeAt(i);
+        // Convert the ASCII code to binary
+        const binary = asciiCode.toString(2);
+        // Pad the binary representation with leading zeros to ensure it's 8 bits long
+        const paddedBinary = addZeros(binary, 8);
+        // Append the padded binary representation to the result
+        binaryString += paddedBinary;
+    }
+    
+    return binaryString;
 };
 
 /******************************************************************************/

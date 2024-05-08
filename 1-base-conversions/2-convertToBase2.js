@@ -4,6 +4,24 @@
 
 const convertToBase2 = element => {
   // Your code here
+  // Edge case for zero
+  if (element === 0) {
+    return "0";
+}
+
+let binary = " ";
+
+// Iterate until the element number becomes zero
+while (decimal > 0) {
+    // Get the remainder when dividing by 2
+    let remainder = decimal % 2;
+    // Prepend the remainder to the binary string
+    binary = remainder.toString() + binary;
+    // Divide the element number by 2
+    element = Math.floor(element / 2);
+}
+
+return binary;
 };
 
 /******************************************************************************/

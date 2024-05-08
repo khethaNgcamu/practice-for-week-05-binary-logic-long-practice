@@ -23,6 +23,22 @@ const binaryStringToArray = str => {
 
 const binaryToAscii = str => {
   // Your code here
+
+     // Split the binary string into an array of 8-bit binary strings
+     const binaryArray = binaryStringToArray(str);
+    
+     // Initialize an empty string to store the ASCII result
+     let asciiString = '';
+     
+     // Iterate over each 8-bit binary string in the array
+     for (let i = 0; i < binaryArray.length; i++) {
+         // Convert the binary string to its ASCII character equivalent
+         const asciiChar = String.fromCharCode(parseInt(binaryArray[i], 2));
+         // Append the ASCII character to the result string
+         asciiString += asciiChar;
+     }
+     
+     return asciiString;
 };
 
 /******************************************************************************/
